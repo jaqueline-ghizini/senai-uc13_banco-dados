@@ -107,3 +107,11 @@ ON Tabela.Nome = TabelaB.Nome
 SELECT Tabela.Nome AS Tabela, TabelaB.Nome AS TabelaB FROM Tabela 
 FULL OUTER JOIN TabelaB
 ON Tabela.Nome = TabelaB.Nome
+
+--criando usuario restrito apenas para leitura
+CREATE LOGIN jogador WITH PASSWORD = '1234'
+CREATE USER jogador FOR LOGIN jogador
+GRANT SELECT TO jogador
+
+
+SELECT * FROM Classes
